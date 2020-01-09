@@ -29,7 +29,7 @@
 <style scoped>
    .navbar{
        border-radius: 0!important;
-       background: rgb(249, 249, 249);
+       background: rgb(110, 64, 94);
        width: 100%;
        border-bottom: 1px solid #ff4d00;
        margin-bottom: 0!important;
