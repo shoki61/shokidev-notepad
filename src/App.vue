@@ -37,7 +37,7 @@
     opacity: 0;
   }
   body{
-    background-color: rgb(255, 236, 198);
+    background-color: #fafafa;
   }
 
 </style>

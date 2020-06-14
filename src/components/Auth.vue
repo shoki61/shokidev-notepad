@@ -1,51 +1,37 @@
 <template>
     <div>
-        <div class=" mt-5 containerDiv">
+        <div class="containerDiv">
             <div class="card card-primary p-3 ">
                 <form @submit.prevent="onSubmit">
                     <div class="form-group">
-                        <span>Your E-mail</span>
                         <input v-model="email"
                                @blur="$v.email.$touch()"
                                type="email"
-                               :class="{'borderLogin' : isUser, 'borderSignup' : !isUser,'border-danger' : $v.email.$error}"
                                placeholder="e-mail...">
-
-                        <small v-if="!$v.email.required" class="text-danger" >required</small>
-                        <small v-if="!$v.email.email" class="text-danger" >please enter a valid e-mail</small>
-
                     </div>
                     <div class="form-group">
-                        <span>Your Password</span>
                         <input v-model="password"
                                @blur="$v.password.$touch()"
                                :class="{'borderLogin' : isUser, 'borderSignup' : !isUser,'border-danger' : $v.password.$error}"
                                type="password"
                                placeholder="password...">
-                        <small v-if="!$v.password.required" class="text-danger" >required</small>
-                        <small v-if="!$v.password.numeric" class="text-danger" >password should become numbers only!</small>
-                        <small v-if="!$v.password.minLength" class="text-danger" >
-                            your password should be at least {{$v.password.$params.minLength.min}} digits
-                        </small>
-                        <small v-if="!$v.password.maxLength" class="text-danger" >
-                            your password should be maximum  {{$v.password.$params.maxLength.max}} digits
-                        </small>
+
                     </div>
-                    <div class="button-container d-flex  flex-column align-items-center">
+                    <div class="button-container ">
                         <button type="submit"
-                                :disabled="$v.$invalid"
                                 :class="{'loginButton' : isUser, 'signupButton' : !isUser }"
-                                class="btn btn-block mb-2">
+                                class="btn mt-5">
                             {{isUser ?'Log in':'Sign up'}}
-                        </button>
-                        <a href="#" @click.prevent="isUser=!isUser" class="text-secondary">
+                        </button><br>
+                        <a href="#" @click.prevent="isUser=!isUser">
                             {{isUser ?"I'm not a member" : "I'm a member"}}
                         </a>
                     </div>
                 </form>
             </div>
-
+          <img height="550px" width="550px" src="/src/noteImg.png" alt="">
         </div>
+
     </div>
 </template>
 
@@ -75,6 +61,7 @@
                         this.$store.commit("setToken",response.data.localId );
                         this.$router.push("/");
                 });
+                this.$router.push("/")
 
             }
         },
@@ -95,69 +82,63 @@
 
 <style scoped>
     .containerDiv{
-        width: 400px;
-        margin: auto;
-        min-height: 90vh;
+        width: 100%;
+        padding-top: 100px;
+        height: 100vh;
+        background:url("/src/homeBackImg.png") no-repeat center center;
+      background-size:cover;
+      display: flex;
     }
     input:focus{
         box-shadow:none;
         outline: none;
     }
-    .border-red{
-        border:none;
-        border-bottom:2px solid #ff0010 !important;
-    }
     .loginButton{
-        background-color: #c12eff !important;
-        color:white;
+        background-color: #37bfed !important;
+        color:#fff;
     }
     .signupButton{
-        background-color: #00ad00 !important;
-        color:white;
+        background-color:#21cc6b !important;
+        color:#fff;
     }
     .card{
         background-color: transparent!important;
         border: none;
-        font-family: sans-serif !important;
-        color: #555555;
-        font-size: 17px;
-    }
-    .borderLogin{
-        border:none;
-        border-bottom:2px solid #c12eff;
-    }
-    .borderSignup{
-        border: none;
-        border-bottom:2px solid #00ad00
+      margin-top: 140px;
+      width: 50%!important;
+      padding-left: 150px!important;
     }
     input{
         background-color: transparent;
         box-shadow: none;
-        border-radius: 0;
-        font-size: 15px;
-        display: block;
-        width: 100%;
-    }
-    input:focus{
-        background-color: transparent;
+        border:1px solid #fff !important;
+        padding:10px;
+        border-radius: 5px;
+        font-size: 20px;
+        color:#fff;
+        width: 400px;
     }
     a{
-        text-decoration: underline;
+        font-size: 20px;
+        padding:0!important;
+        color:#ededed!important;
     }
     button:focus{
         box-shadow: none!important;
     }
     button{
         outline: none!important;
-    }
-    .loginButton:hover{
-        background-color: #8a2ec1!important;
-    }
-    .signupButton:hover{
-        background-color: #007e00 !important;
+        width: 400px;
+        height: 55px;
+        border-radius: 5px!important;
+        font-size: 20px;
+        margin-bottom: 15px;
     }
     small{
         font-size: 15px;
+    }
+    ::placeholder{
+      color:#ededed
     }
     @media only screen and (min-device-width : 200px)and (max-device-width : 1200px) {
         .containerDiv{

@@ -4,31 +4,41 @@
             <h2 class="ml-5 mb-5">Loading...</h2>
             <div class="spinner-grow" role="status"></div>
         </div>
-        <div v-else>
-            <h1 class="text-center" v-if="lists.length>0">Notes</h1>
 
-            <router-link to="/newnode" tag="p">
-                <p class="text-center addedText1"
+        <div v-else align="center">
+          <img height="150" v-if="show" src="/src/null.png" alt="">
+            <div style="display: flex;justify-content: space-between">
+              <h1  v-if="lists.length>0">Notes</h1>
+
+              <router-link :class="{'addButtonContainer':show}" to="/newnode" tag="p">
+
+                <p class="addedText1"
                    v-if="show"
                 >
-                    You haven't any note <br>
-                    Click for a new one <br>
-                    <a><i class='fa fa-plus mr-2'></i></a>
+                  You haven't any note <br>
+                  Click for a new one <br>
+                  <a><i class='fa fa-plus mr-2'></i></a>
                 </p>
                 <p v-else-if="lists.length>0" class="text-center addedText">
-                    <a><i class='fa fa-plus mr-2'></i>Add new note</a>
+                  <a><i class='fa fa-plus mr-2'></i> new note</a>
                 </p>
-            </router-link>
+              </router-link>
+            </div>
 
-            <div v-for="list in lists">
+
+
+
+            <div class="postsContainer">
+              <div v-for="list in lists">
                 <div class="containerDiv">
-                    <div @click="push(list)" style="height: 100%;">
-                        <p class="text-center titleText" >{{list.data.title}}</p>
-                        <p class="description">{{list.data.text}}</p>
-                        <p class="dateText">{{list.data.date}} {{list.data.time}}</p>
-                    </div>
-                    <button class="btn" @click="deleteNote(list.key)"><i class="material-icons">close</i></button>
+                  <div @click="push(list)" style="height: 100%;">
+                    <p class="text-center titleText" >{{list.data.title}}</p>
+                    <p class="description">{{list.data.text}}</p>
+                    <p class="dateText">{{list.data.date}}-{{list.data.time}}</p>
+                  </div>
+                  <button class="btn" @click="deleteNote(list.key)"><i class="material-icons">close</i></button>
                 </div>
+              </div>
             </div>
         </div>
     </div>
@@ -85,35 +95,51 @@
 </script>
 
 <style scoped>
+  img{
+    opacity: 0.7;
+    margin: 70px auto auto;
+  }
     h2{
         color:grey;
+      font-size: 35px;
+    }
+    .addButtonContainer{
+      width: 100%;
+    }
+    .postsContainer{
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
     }
     h1{
-        display: block;
+        display: flex;
         color: #6b6b6b;
+        font-size: 45px;
+        margin-left: 30px;
     }
     .container-fluid{
+        padding-top: 90px;
         min-height: 100vh;
-        margin-bottom: 25px;
+        padding-bottom: 25px;
     }
     .spinner-grow{
-        width: 60px;
-        height: 60px;
-        background-color: #ff4d00;
+        width: 50px;
+        height: 50px;
+        background-color: #404040;
     }
     .containerDiv{
-        width: 600px;
-        height: 140px;
-        border:1px solid #a9a9a9;
-        margin: 10px auto 30px;
-        border-radius: 5px;
+        width: 320px;
+        height: 200px;
+        margin:15px;
+        border-radius: 7px;
         position: relative;
         cursor: pointer;
-        background-color: #ffe3c5;
+        background-color: #fff;
+        box-shadow: 1px 1px 3px 0 #dbdbdb;
         transition: box-shadow 0.3s ease-in-out;
     }
     .containerDiv:hover{
-        box-shadow: 0 0 20px 0 #ff4d00;
+      box-shadow: 1px 1px  10px 5px #dbdbdb;
     }
     button{
         position: absolute;
@@ -121,7 +147,7 @@
         right:0;
         opacity: 0;
         transition: opacity .3s ease-in-out;
-        color:#f00000!important;
+        color:#fff!important;
     }
     button:hover i{
         font-weight:900!important;
@@ -134,59 +160,64 @@
         opacity: 1;
     }
     a{
-        color:grey;
-        transition: padding-bottom .3s ease-in-out, color .3s ease-in-out;
+        color:#fff;
+        font-size: 17px;
+        transition: color .3s ease-in-out;
+      text-decoration: none;
     }
     .addedText{
-        font-size: 17px;
-        color:grey;
-        margin: 30px;
         cursor: pointer;
-        height: 30px;
+        height: 45px;
+        border-radius: 5px;
+        width: 140px;
+        background-color:  #2adb9a;
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: center
     }
-    a:hover {
-        color: #ff4d00;
-        padding-bottom: 15px;
-        text-decoration: underline;
+    .addedText:hover{
+      background-color: #26c98e;
     }
     .titleText{
         font-size: 30px;
-        color: #ff5e00;
+        color: #fff;
         padding:10px 50px;
-        background-color: #cae8ff;
-        border-bottom: 1px solid #c4c4c4;
+        background-color: #404040;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+      border-radius: 7px 7px 0 0;
     }
     .description{
         font-size: 17px;
         color: #4c4c4c;
         padding-left: 30px;
         padding-right: 30px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+        text-align: left;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow:hidden;
+        -webkit-line-clamp: 4;
     }
     .dateText{
         font-family: Bahnschrift,sans-serif;
         font-weight: 100;
         position: absolute;
         bottom:0;
-        font-size: 15px;
+        font-size: 14px;
         right: 15px;
+        color:grey;
         margin-bottom: 5px!important;
     }
     .addedText1{
-        font-size: 30px;
-        margin-top: 150px;
+        font-size: 25px;
+        margin-top: 30px;
         color: #6b6b6b;
+      text-align: center;
     }
     .addedText1 a{
         font-size: 50px;
+      color:#6b6b6b
     }
     .loadingDiv{
         height: 400px;

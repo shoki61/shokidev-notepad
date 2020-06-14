@@ -3,12 +3,15 @@
         <div align="center" class="containerDiv">
             <div class="animated bounceInDown">
                 <router-link to="/notes" tag="span">
-                    <span class="text-center ">Notes</span>
+                    <p class="text-center noteText">Notes</p>
                 </router-link>
             </div>
+           <div class="line">
+
+           </div>
             <div class="animated animated bounceInUp">
                 <router-link to="/budget" tag="span">
-                    <span class="text-center ">Budget</span>
+                    <p class="text-center budgetText">Budget</p>
                 </router-link>
             </div>
         </div>
@@ -20,21 +23,41 @@
 
 <style scoped>
     .container-fluid{
-        min-height: 100vh;
-        background:  url("/src/backgroundImg.jpg") no-repeat center;
+        height: 100vh;
+        padding-top: 150px;
+        background:  url("/src/backgroundImg.png") no-repeat center;
         background-size: cover;
     }
    .containerDiv{
        margin: 150px auto auto;
+     display: flex;
+     justify-content: center;
    }
-   span{
-       color: #98d1e8;
+   p{
+       color: #fff;
        cursor: pointer;
-       font-size: 35px;
-       font-weight: 100!important;
+       font-size: 25px;
+       padding:18px 75px;
+       border:2px solid #fff;
+     border-radius: 100px;
+       transition:margin-top .3s ease-in-out, color .3s ease-in-out, background-color .3s ease-in-out;
    }
-   span:hover{
-       color: #00cdff;
+   p:hover{
+       color: #00ccf5;
+       background-color: #fff;
+       position: relative;
+       margin-top:-10px;
+   }
+   .line{
+     background-color: #fff;
+     height:80px;
+     width: 3px;
+   }
+   .noteText{
+     margin-right: 150px;
+   }
+   .budgetText{
+     margin-left: 150px;
    }
     @media only screen and (min-device-width : 200px)and (max-device-width : 1200px) {
         span{

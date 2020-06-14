@@ -3,8 +3,7 @@
         <div class="containerDiv">
             <h1 class="title">{{lists.title}}</h1>
             <p class="description">{{lists.text}}</p>
-            <hr>
-            <p class="date">{{lists.date}} <span>{{lists.time}}</span></p>
+            <p class="date">{{lists.date}}-{{lists.time}}</p>
         </div>
     </div>
 </template>
@@ -27,31 +26,27 @@
         min-height: 100vh;
     }
     .containerDiv{
-        margin: 80px auto auto;
-        width: 700px;
+        margin: 150px auto auto;
+        width: 550px;
     }
     .title{
-        color: #903300;
-        border-left:6px solid #ff4d00;
-        padding-left: 10px;
         margin-bottom: 35px;
+        color: #505050;
+        border-bottom: 1px solid #636363;
+        text-align: center;
+        padding-bottom: 10px
+
     }
     .description{
-        font-size:20px;
-        color: #444444;
-        margin-bottom: 20px;
+        font-size:18px;
+        color: #636363;
+        margin-bottom: 50px;
     }
     .date{
-        padding-right: 40px;
         font-family: Bahnschrift,sans-serif;
-        font-size: 15px;
-        font-weight: 100;
-    }
-    span{
-        margin-left: 5px;
-    }
-    hr{
-        border-bottom: 1px solid #ff4d00;
+        font-size: 12px;
+        color:#636363;
+        text-align: right;
     }
 
     @media only screen and (min-device-width : 200px)and (max-device-width : 1200px) {

@@ -1,9 +1,13 @@
 <template>
-    <div align="center" class="container-fluid">
+    <div class="container-fluid">
 
-        <input class="inputTitle" placeholder="Title..." type="text" v-model="title">
-        <textarea rows="1" cols="50" class="description" placeholder="Description..." v-model="text"></textarea>
-        <button class="btn" @click="push" :disabled="$v.$invalid">Save</button>
+        <div class="containerForm">
+          <input class="inputTitle" placeholder="title..." type="text" v-model="title">
+          <textarea  class="description" placeholder="description..." v-model="text"></textarea>
+          <div class="buttonContainer">
+            <button class="btn" @click="push" >Save</button>
+          </div>
+        </div>
     </div>
 </template>
 
@@ -40,65 +44,80 @@
 </script>
 
 <style scoped>
+  .containerForm{
+    width: 50%;
+    padding: 20px 50px;
+    box-shadow: 2px 2px 4px 0 #c7c7c7;
+    border-radius: 5px;
+    margin: auto;
+    background-color: #fff;
+  }
+  .buttonContainer{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+  }
     .container-fluid{
         min-height: 100vh;
-        padding-top: 40px;
+        padding-top: 150px;
     }
     .inputTitle{
         display: block;
-        width: 300px;
+        width: 100%;
         border:none;
-        border-bottom:1px solid grey;
+        border-bottom:2px solid #d9d9d9;
         outline: none;
-        padding:5px;
+        padding:0px 5px;
         background-color: transparent;
-        text-align: center;
-        font-size: 30px;
+        font-size: 25px;
         margin-bottom: 35px;
-        color: #ff4d00;
+        color:#5e5e5e;
         transition: color 1s ease-in-out;
         letter-spacing: 1px;
     }
     ::placeholder{
-        color:grey;
-        font-size: 25px;
         transition: color .3s ease-in-out;
     }
     input:focus::placeholder{
         color:transparent;
     }
     input:focus{
-        border-bottom: 1px solid #ff4d00;
+        border-bottom: 2px solid #0eede2;
     }
     textarea:focus::placeholder{
         color:transparent;
     }
+  textarea:focus{
+    border:1px solid #0eede2;
+  }
     .description{
         display:block;
-        border:none;
-        background-color: transparent;
-        border-bottom:1px solid grey;
+        border:1px solid #d9d9d9;
+        color:#5e5e5e;
         outline: none;
         resize: none;
         font-size: 20px;
-        text-align: center;
         letter-spacing: 1px;
-        padding-bottom: 10px;
+        width: 100%;
+        height: 120px;
+        border-radius: 5px;
+        padding:10px  15px;
     }
     .btn{
-        border:1px solid #ff4000;
-        color:#ff4000;
-        margin-top: 40px;
-        border-radius: 5px;
+        color:#fff;
         letter-spacing: 1px;
+      border-radius: 3px;
+        background-color: #2adb9a;
+      width: 140px;
+      height: 45px;
     }
     .btn:focus{
         outline: none!important;
         box-shadow: none!important;
     }
     .btn:hover{
-        background-color: #ff4d00;
-        color: #e9e9e9;
+        background-color: #26c98e;
     }
     @media only screen and (min-device-width : 200px)and (max-device-width : 1200px) {
         .inputTitle{

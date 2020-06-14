@@ -1,7 +1,6 @@
 import Vue from "vue"
 import Vuex from "vuex"
 import {router} from "./router"
-import Home from "./components/Home";
 
 Vue.use(Vuex);
 
@@ -30,7 +29,7 @@ export const store = new Vuex.Store({
     },
     getters : {
         isAuth(state){
-            return state.token !== ""
+             return   state.token !== ""
         }
     },
 });

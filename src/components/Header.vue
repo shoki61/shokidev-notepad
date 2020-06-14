@@ -1,9 +1,10 @@
 <template>
         <nav class="navbar navbar-expand-lg navbar-light">
             <router-link to="/" class="navbar-brand">
-                <i class="fa fa-book"></i>
+                <img height="45px" src="/src/logo.png" alt="logo">
                 <span>notePad</span>
             </router-link>
+
             <a @click="logout" :class="logoutClass" class="nav-link" href="#">Log out</a>
         </nav>
 </template>
@@ -29,10 +30,13 @@
 <style scoped>
    .navbar{
        border-radius: 0!important;
-       background: rgb(110, 64, 94);
+       background-color: #2b2b2b;
        width: 100%;
-       border-bottom: 1px solid #ff4d00;
        margin-bottom: 0!important;
+       height: 65px;
+       padding-left:30px;
+     position: fixed;
+     z-index: 35000;
    }
    .navbar-brand{
        display: flex!important;
@@ -43,40 +47,34 @@
        right: 10px;
    }
    .nav-link{
-       font-size:17px;
-       color: #626262;
+       font-size:20px;
+       color: #fff;
    }
    .nav-link:hover{
-       color: #4c4c4c;
+       color: #fff;
    }
-    i{
-        font-size: 40px;
-        color: #ff4d00;
-    }
     span{
-        color: #434343;
-        margin-left: 5px;
-        font-size: 28px;
-    }
-    .navbar-brand:hover span{
-        color:#ff4d00
+        color: #fff;
+        margin-left: 0px;
+        font-size: 50px;
+        font-family: Forte;
     }
    @media only screen and (min-device-width : 200px)and (max-device-width : 1200px) {
-       .navbar{
-           height: 130px;
-       }
-       .fa-book{
-           font-size: 70px;
-       }
-       span{
-           font-size: 70px;
-       }
-       .navbar-brand{
-           position: relative;
-       }
-       a{
-           font-size: 45px!important;
-       }
+     .navbar{
+       height: 130px;
+     }
+     .fa-book{
+       font-size: 70px;
+     }
+     span{
+       font-size: 70px;
+     }
+     .navbar-brand{
+       position: relative;
+     }
+     a{
+       font-size: 45px!important;
+     }
    }
 
 </style>

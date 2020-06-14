@@ -1,7 +1,7 @@
 <template>
     <footer>
         <p class="title">Developed by</p>
-        <p class="by">Sohrat Jumadurdyyev ©2019</p>
+        <p class="by">Sohrat Jumadurdyyev 2020</p>
         <a href="" target="_blank"><i class="fab fa-github"></i></a>
     </footer>
 </template>
@@ -15,10 +15,9 @@
 
     footer{
         text-align: center;
-        line-height: 13px;
-        color: #7f7f7f;
+        color: #fff;
         cursor: default;
-        background-color: #252525;
+        background-color: #2b2b2b;
         padding: 15px;
         margin-top: 0!important;
         border:none!important;
@@ -28,21 +27,24 @@
         justify-content: center;
         align-items: center;
         transition: color .2s ease-in-out;
+        font-size: 15px;
+        margin:0!important;
+        color:#dbdbdb
     }
     .by:hover{
-        color:#ff4d00;
+        color:#fff;
     }
     .title{
-        font-size:18px;
-        color: #919191;
+        font-size:20px;
+        margin: 0!important;
     }
     a{
-        color: #9a9a9a;
-        font-size: 20px;
+        color: #dbdbdb;
+        font-size: 25px;
         margin-left: 15px;
     }
     a:hover{
-        color: #ff4d00;
+        color: #fff;
     }
     @media only screen and (min-device-width : 200px)and (max-device-width : 1200px) {
         footer{

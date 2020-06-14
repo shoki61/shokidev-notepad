@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid">
         <div align="center" class="containerValue">
-            <div @click="show=!show" class="form-group">
+            <div @click="show=!show" class="form-group" style="margin:auto">
                 <i :class="{'up' : !show,'down': show}" class="glyphicon glyphicon-arrow-down text-center"></i>
                 <small class="animated zoomIn"  v-bind:key="show" :class="{'colorRed' : !show,'colorGreen' : show}">
                     {{show? 'income':'expense'}}
@@ -11,26 +11,27 @@
                 <form class="animated bounceInDown">
                     <input class="inputValue"
                            type="number"
-                           placeholder="Value..."
+                           placeholder="value..."
                            v-model="value"
                            :class="{'colorRed' : !show,'colorGreen' : show}"
                     >
-                    <input
+                    <textarea
                             class="description"
                             type="text"
-                            placeholder="Description..."
+                            placeholder="description..."
                             v-model="description">
-                    <button
-                            class="fas fa-check btn "
-                            @click="push"
-                            :disabled="$v.$invalid"
-                            >
-                    </button>
+                    </textarea>
+                    <br>
+                        <button
+                                class="btn "
+                                @click="push"
+                        >
+                            Save
+                        </button>
                 </form>
             </div>
         </div>
-        <hr>
-        <div>
+        <div align="center" style="width: 70%">
             <div v-if="status===null" class="loadingDiv" align="center">
                 <div class="spinner-grow" role="status">
                 </div>
@@ -133,41 +134,46 @@
         color:#4f4f4f
     }
     .containerValue{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 350px;
+        padding-top: 150px;
+        background-color: #ebebeb;
+        box-shadow: .5px -2px 10px 0 #a8a8a8;
     }
     .container-fluid{
+        display: flex;
         min-height: 100vh;
-        padding-top: 30px;
+        padding-left: 0!important;
+        position: relative;
     }
     .containerDiv{
-        width: 700px;
-        margin: auto auto 50px;
+        width: 100%;
+        margin:100px auto auto 50px;
+
     }
     i{
         font-size: 90px;
         padding-right: 8px;
+        z-index: 1500;
     }
     .colorRed{
-        color:#f00000!important;
+        color:#ff6161!important;
     }
     .colorGreen{
-        color:#00b000!important;
+        color:#00d49b!important;
     }
     .up{
         animation-timing-function: ease-in-out;
         animation-name:ani;
         animation-duration: .5s;
         animation-fill-mode: forwards;
-        color:#f00000;
+        color:#ff6161;
     }
     .down{
         animation-timing-function: ease-in-out;
         animation-name: ani1;
         animation-duration: .5s;
         animation-fill-mode: forwards;
-        color:#00b000;
+        color:#00d49b;
     }
     .glyphicon-arrow-down{
         transition: ease-in-out .5s;
@@ -186,12 +192,34 @@
     }
     input{
         border:none;
-        border-bottom: 2px solid #a8a8a8;
+        border-bottom: 2px solid #bfbfbf;
         outline: none;
-        padding: 0 10px;
         background-color: transparent;
-        width: 300px;
-        font-size: 30px;
+        width: 80%;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    .description{
+        border :1px solid #bfbfbf;
+        outline: none;
+        background-color: #fff;
+        padding:10px 15px;
+        width: 80%;
+        font-size: 15px;
+        border-radius: 5px;
+        resize: none;
+        height: 100px;
+    }
+    .description::placeholder{
+        color:grey;
+        font-size: 17px;
+        transition: color .3s ease-in-out;
+    }
+    textarea:focus{
+        border-color: #969696;
+    }
+    textarea:focus::placeholder{
+        color:transparent;
     }
     ::placeholder{
         color:grey;
@@ -200,6 +228,9 @@
     }
     input:focus::placeholder{
         color:transparent;
+    }
+    input:focus{
+        border-bottom-color: #969696;
     }
     small{
         font-size: 25px;
@@ -220,12 +251,22 @@
         text-shadow: 1px 1px 5px #8d8d8d;
     }
     li{
-        border-bottom: 1px solid #b8b8b8;
+        border-bottom: 1px solid #e0e0e0;
         display: flex;
         justify-content: space-between;
         position: relative;
         align-items: center;
         padding-top: 30px;
+    }
+    .btn{
+        width: 80%;
+        height: 40px;
+        background-color: #2adb9a;
+        color:#fff;
+        margin-top:10px
+    }
+    .btn:hover{
+        background-color: #26c98e;
     }
     .closeButton{
         font-size:25px;
@@ -248,14 +289,11 @@
         padding-bottom:10px;
         font-weight: 900;
     }
-    hr{
-        border-top:1px solid grey;
-        width: 90vw;
-    }
+
     .valueText{
         margin-right: 30px;
         font-size: 35px;
-        width: 150px;
+        width: 300px;
         color: #414141;
         overflow: auto;
         white-space: nowrap;
@@ -277,6 +315,8 @@
     .desText{
         font-size: 20px;
         width: 100%;
+        color:#787878;
+        text-align: left;
     }
     .dateText{
         font-size: 15px;
@@ -286,10 +326,6 @@
         font-family: Bahnschrift,serif;
         font-weight: 100;
     }
-    .inputValue{
-        width: 130px;
-        transition: color .2s ease-in-out;
-    }
     input::-webkit-inner-spin-button {
         -webkit-appearance: none;
 
@@ -297,15 +333,15 @@
     .loadingDiv{
         width: 150px;
         height: 150px;
-        margin: auto;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 175px;
     }
     .spinner-grow{
         width: 60px;
         height: 60px;
-        background-color: #ff4d00;
+        background-color: #404040;
     }
     @media only screen and (min-device-width : 200px)and (max-device-width : 1200px) {
         .containerValue{
