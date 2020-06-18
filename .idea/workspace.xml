@@ -3,18 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7201970-7be9-4821-93cf-8d6dd7676547" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backgroundImg.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Auth.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Budget.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Budget.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Note.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Note.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Notes.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Notes.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/newNote.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/newNote.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +64,7 @@
       <workItem from="1592070185473" duration="10128000" />
       <workItem from="1592128699527" duration="9457000" />
       <workItem from="1592169073606" duration="2635000" />
+      <workItem from="1592502195825" duration="2634000" />
     </task>
     <servers />
   </component>
@@ -87,7 +77,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/Budget.vue</url>
           <line>345</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

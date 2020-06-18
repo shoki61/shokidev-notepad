@@ -26,6 +26,10 @@
                         <a href="#" @click.prevent="isUser=!isUser">
                             {{isUser ?"I'm not a member" : "I'm a member"}}
                         </a>
+                        <div v-if="showDangerMessage" class="dangerContainer">
+                            <i style="color:#ff4545;font-size: 35px" class="fas fa-exclamation-circle"></i>
+                            <span class="dangerMessage">Incorrect e-mail or password!</span>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -45,6 +49,7 @@
                 email: null,
                 password: null,
                 isUser: false,
+                showDangerMessage:false
             }
         },
         methods : {
@@ -60,8 +65,12 @@
                         localStorage.setItem("token",response.data.localId);
                         this.$store.commit("setToken",response.data.localId );
                         this.$router.push("/");
+                }).catch(()=>{
+                    this.showDangerMessage = true
+                    setTimeout(()=>{
+                        this.showDangerMessage=false
+                    },5000)
                 });
-                this.$router.push("/")
 
             }
         },
@@ -92,6 +101,16 @@
     input:focus{
         box-shadow:none;
         outline: none;
+    }
+    .dangerContainer{
+        margin-top: 20px;
+        align-items: center;
+        display: flex;
+    }
+    .dangerMessage{
+        font-size: 17px;
+        color: #fff;
+        margin-left: 10px;
     }
     .loginButton{
         background-color: #37bfed !important;
