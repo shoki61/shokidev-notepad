@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e7201970-7be9-4821-93cf-8d6dd7676547" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Auth.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Budget.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Budget.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Note.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Note.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/newNote.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/newNote.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,21 +67,11 @@
       <workItem from="1592128699527" duration="9457000" />
       <workItem from="1592169073606" duration="2635000" />
       <workItem from="1592502195825" duration="2634000" />
+      <workItem from="1592595313481" duration="3806000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/Budget.vue</url>
-          <line>345</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

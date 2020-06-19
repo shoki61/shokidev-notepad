@@ -131,7 +131,8 @@
 
 <style scoped>
     h3{
-        color:#4f4f4f
+        color:#4f4f4f;
+        margin-top: 150px;
     }
     .containerValue{
         width: 350px;
@@ -148,7 +149,6 @@
     .containerDiv{
         width: 100%;
         margin:100px auto auto 50px;
-
     }
     i{
         font-size: 90px;
@@ -257,6 +257,8 @@
         position: relative;
         align-items: center;
         padding-top: 30px;
+        margin-top: 0!important;
+        margin-bottom: 0!important;
     }
     .btn{
         width: 80%;
@@ -284,6 +286,9 @@
     }
     li:hover .closeButton{
         opacity: 1;
+    }
+    li:hover{
+        background-color: #f2f2f2;
     }
     .closeButton:hover{
         padding-bottom:10px;

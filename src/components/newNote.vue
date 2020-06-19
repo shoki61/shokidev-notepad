@@ -1,6 +1,8 @@
 <template>
     <div class="container-fluid">
-
+        <router-link class="backButton" to="/notes">
+            <img height="20" src="../backIcon.png"/>
+        </router-link>
         <div class="containerForm">
           <input class="inputTitle" placeholder="title..." type="text" v-model="title">
           <textarea  class="description" placeholder="description..." v-model="text"></textarea>
@@ -44,6 +46,23 @@
 </script>
 
 <style scoped>
+    .backButton{
+        height: 50px;
+        width: 50px;
+        background-color: #ccc;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        top:150px;
+        left:200px;
+        transition: background-color .2s ease-in-out;
+    }
+    .backButton:hover{
+        background-color: #5c5c5c;
+        box-shadow: 1px 1px 10px 0 grey;
+    }
   .containerForm{
     width: 50%;
     padding: 20px 50px;
